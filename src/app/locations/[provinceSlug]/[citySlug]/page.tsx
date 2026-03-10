@@ -6,6 +6,7 @@ import { Breadcrumbs } from "@/components/shared/breadcrumbs";
 import { FaqAccordion } from "@/components/shared/faq-accordion";
 import { ServiceCard } from "@/components/shared/cards";
 import { SectionHeading } from "@/components/shared/section-heading";
+import { getLocationMedia } from "@/data/media";
 import { cities, getCityBySlugs, provinces } from "@/data/locations";
 import { services } from "@/data/services";
 import { buildMetadata, siteUrl } from "@/lib/seo";
@@ -93,6 +94,7 @@ export default async function CityPage({
           title={`Professional cleaning services in ${city.name}`}
           description={`${city.intro} We support homeowners, renters, landlords, offices, and real estate teams with reliable scheduling and conversion-focused service packages.`}
           compact
+          media={getLocationMedia("city")}
         />
       </div>
       <section className="section-space">

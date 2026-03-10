@@ -2,6 +2,7 @@ import { Hero } from "@/components/sections/hero";
 import { ButtonLink } from "@/components/shared/button-link";
 import { LocationCard } from "@/components/shared/cards";
 import { SectionHeading } from "@/components/shared/section-heading";
+import { getPageMedia } from "@/data/media";
 import { cities, provinces } from "@/data/locations";
 import { buildMetadata } from "@/lib/seo";
 
@@ -19,6 +20,7 @@ export default function CoveragePage() {
         title="Cleaning services across major Canadian provinces and city hubs."
         description="Browse province filters, local landing pages, and city-specific service notes for homes, rentals, offices, and specialty cleanup projects."
         compact
+        media={getPageMedia("coverage")}
       />
       <section className="section-space">
         <div className="container-shell">

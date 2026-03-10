@@ -1,6 +1,7 @@
 import { Hero } from "@/components/sections/hero";
 import { ServiceCard } from "@/components/shared/cards";
 import { SectionHeading } from "@/components/shared/section-heading";
+import { getPageMedia } from "@/data/media";
 import { services } from "@/data/services";
 import { buildMetadata } from "@/lib/seo";
 
@@ -18,6 +19,7 @@ export default function ServicesHubPage() {
         title="The full cleaning service lineup for homes, rentals, offices, and specialty projects."
         description="Explore every cleaning service offered by All Around Cleaners, from standard home support to high-detail property resets."
         compact
+        media={getPageMedia("services")}
       />
       <section className="section-space">
         <div className="container-shell">

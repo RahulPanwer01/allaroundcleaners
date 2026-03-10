@@ -2,6 +2,7 @@ import { Hero } from "@/components/sections/hero";
 import { FaqAccordion } from "@/components/shared/faq-accordion";
 import { SectionHeading } from "@/components/shared/section-heading";
 import { faqCategories } from "@/data/faqs";
+import { getPageMedia } from "@/data/media";
 import { buildMetadata } from "@/lib/seo";
 import { JsonLd, getFaqSchema } from "@/lib/schemas";
 
@@ -20,6 +21,7 @@ export default function FaqPage() {
         title="The operational details clients ask for before they book."
         description="Everything from pricing and supplies to cancellations, custom quotes, and service coverage."
         compact
+        media={getPageMedia("faq")}
       />
       <section className="section-space">
         <div className="container-shell space-y-10">

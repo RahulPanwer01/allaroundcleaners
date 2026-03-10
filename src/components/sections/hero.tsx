@@ -1,5 +1,7 @@
+import Image from "next/image";
 import { CheckCircle2 } from "lucide-react";
 import { ButtonLink } from "@/components/shared/button-link";
+import type { HeroMedia } from "@/data/media";
 
 type HeroProps = {
   eyebrow: string;
@@ -7,9 +9,10 @@ type HeroProps = {
   description: string;
   bullets?: ReadonlyArray<string>;
   compact?: boolean;
+  media?: HeroMedia;
 };
 
-export function Hero({ eyebrow, title, description, bullets = [], compact = false }: HeroProps) {
+export function Hero({ eyebrow, title, description, bullets = [], compact = false, media }: HeroProps) {
   return (
     <section className="bg-hero-grid">
       <div className={`container-shell ${compact ? "py-16 sm:py-20" : "py-20 sm:py-24 lg:py-28"}`}>
@@ -40,31 +43,23 @@ export function Hero({ eyebrow, title, description, bullets = [], compact = fals
               </ButtonLink>
             </div>
           </div>
-          <div className="card-surface relative overflow-hidden p-8 sm:p-10">
-            <div className="absolute inset-0 bg-gradient-to-br from-teal/10 via-transparent to-mint/15" />
-            <div className="relative">
-              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-teal">
-                Cleaner, faster turnovers
-              </p>
-              <div className="mt-6 grid gap-4 sm:grid-cols-2">
-                {[
-                  ["Homes and condos", "Move-outs, deep cleans, recurring maintenance"],
-                  ["Commercial spaces", "Offices, common areas, retail, post-renovation"],
-                  ["Specialty add-ons", "Appliances, upholstery, pressure washing"],
-                  ["National support", "One brand standard across Canadian markets"],
-                ].map(([label, text]) => (
-                  <div key={label} className="rounded-3xl border border-mist bg-white/80 p-4">
-                    <h2 className="text-sm font-semibold text-ink">{label}</h2>
-                    <p className="mt-2 text-sm leading-6 text-slate">{text}</p>
-                  </div>
-                ))}
-              </div>
-              <div className="mt-6 rounded-3xl bg-ink p-6 text-white">
-                <p className="text-sm text-white/75">Book now, pay later</p>
-                <p className="mt-2 text-2xl font-semibold">Transparent quotes without chasing crews for updates.</p>
+          {media ? (
+            <div className="card-surface overflow-hidden">
+              <div className="relative h-[340px] sm:h-[460px]">
+                <Image src={media.src} alt={media.alt} fill className="object-cover" sizes="(max-width: 1024px) 100vw, 42vw" />
+                <div className="absolute inset-0 bg-gradient-to-t from-ink/75 via-ink/20 to-transparent" />
+                <div className="absolute left-5 right-5 top-5">
+                  <span className="inline-flex rounded-full border border-white/30 bg-white/12 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-white">
+                    {media.eyebrow}
+                  </span>
+                </div>
+                <div className="absolute bottom-5 left-5 right-5 rounded-[1.75rem] bg-white/92 p-5 backdrop-blur">
+                  <h2 className="text-xl font-semibold text-ink sm:text-2xl">{media.title}</h2>
+                  <p className="mt-3 text-sm leading-6 text-slate">{media.description}</p>
+                </div>
               </div>
             </div>
-          </div>
+          ) : null}
         </div>
       </div>
     </section>

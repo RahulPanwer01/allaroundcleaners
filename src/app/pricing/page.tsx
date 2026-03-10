@@ -3,6 +3,7 @@ import { PricingCard } from "@/components/shared/cards";
 import { FaqAccordion } from "@/components/shared/faq-accordion";
 import { Hero } from "@/components/sections/hero";
 import { SectionHeading } from "@/components/shared/section-heading";
+import { getPageMedia } from "@/data/media";
 import { addOns, pricingTiers } from "@/data/pricing";
 import { buildMetadata } from "@/lib/seo";
 import { formatCurrency } from "@/lib/utils";
@@ -21,6 +22,7 @@ export default function PricingPage() {
         title="Clear starting rates for standard home cleaning packages."
         description="Use these prices as a baseline for studios through three-bedroom homes. Larger homes, heavy-condition properties, and specialty scopes receive custom quotes."
         compact
+        media={getPageMedia("pricing")}
       />
       <section className="section-space">
         <div className="container-shell">

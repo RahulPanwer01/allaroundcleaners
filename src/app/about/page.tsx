@@ -1,6 +1,7 @@
 import { Hero } from "@/components/sections/hero";
 import { CtaBanner } from "@/components/shared/cta-banner";
 import { SectionHeading } from "@/components/shared/section-heading";
+import { getPageMedia } from "@/data/media";
 import { buildMetadata } from "@/lib/seo";
 
 export const metadata = buildMetadata({
@@ -17,6 +18,7 @@ export default function AboutPage() {
         title="A cleaning company built around reliable execution, not vague promises."
         description="We help households, real estate teams, landlords, and businesses get dependable cleaning support with a clear process, strong communication, and practical service coverage across Canada."
         compact
+        media={getPageMedia("about")}
       />
       <section className="section-space">
         <div className="container-shell grid gap-10 lg:grid-cols-2">

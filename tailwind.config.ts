@@ -5,23 +5,23 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        ink: "#0f172a",
-        slate: "#52607a",
-        mist: "#e8f2f2",
-        sea: "#0d5f73",
-        teal: "#10727d",
-        mint: "#27b37e",
-        sand: "#f7fbfb",
+        ink: "#2b211b",
+        slate: "#6f6156",
+        mist: "#e6d7c7",
+        sea: "#7a5d4a",
+        teal: "#b86f4d",
+        mint: "#c79b62",
+        sand: "#f6efe7",
       },
       boxShadow: {
-        soft: "0 20px 60px rgba(15, 23, 42, 0.08)",
+        soft: "0 24px 70px rgba(43, 33, 27, 0.10)",
       },
       borderRadius: {
         "4xl": "2rem",
       },
       backgroundImage: {
         "hero-grid":
-          "radial-gradient(circle at top left, rgba(39,179,126,0.12), transparent 28%), radial-gradient(circle at top right, rgba(13,95,115,0.14), transparent 30%), linear-gradient(135deg, #ffffff 0%, #f7fbfb 100%)",
+          "radial-gradient(circle at top left, rgba(199,155,98,0.18), transparent 30%), radial-gradient(circle at top right, rgba(184,111,77,0.16), transparent 32%), linear-gradient(135deg, #fcf7f1 0%, #f6efe7 100%)",
       },
       fontFamily: {
         sans: ["Manrope", "Avenir Next", "Segoe UI", "sans-serif"],

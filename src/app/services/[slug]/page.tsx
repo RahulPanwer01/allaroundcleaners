@@ -5,6 +5,7 @@ import { Breadcrumbs } from "@/components/shared/breadcrumbs";
 import { FaqAccordion } from "@/components/shared/faq-accordion";
 import { ServiceCard } from "@/components/shared/cards";
 import { SectionHeading } from "@/components/shared/section-heading";
+import { getServiceMedia } from "@/data/media";
 import { getServiceBySlug, services } from "@/data/services";
 import { buildMetadata, siteUrl } from "@/lib/seo";
 import { JsonLd, getBreadcrumbSchema, getFaqSchema } from "@/lib/schemas";
@@ -55,7 +56,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
         <div className="container-shell">
           <Breadcrumbs items={[{ href: "/", label: "Home" }, { href: "/services", label: "Services" }, { label: service.name }]} />
         </div>
-        <Hero eyebrow={service.shortLabel} title={service.name} description={service.intro} bullets={service.benefits} compact />
+        <Hero eyebrow={service.shortLabel} title={service.name} description={service.intro} bullets={service.benefits} compact media={getServiceMedia(service.slug)} />
       </div>
       <section className="section-space">
         <div className="container-shell grid gap-8 lg:grid-cols-2">

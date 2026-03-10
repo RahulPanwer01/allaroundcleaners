@@ -1,5 +1,6 @@
 import { JoinForm } from "@/components/forms/join-form";
 import { Hero } from "@/components/sections/hero";
+import { getPageMedia } from "@/data/media";
 import { buildMetadata } from "@/lib/seo";
 
 export const metadata = buildMetadata({
@@ -16,6 +17,7 @@ export default function JoinUsPage() {
         title="Work with a cleaning company that values reliability, professionalism, and practical support."
         description="We hire detail-focused cleaners for residential, commercial, and specialty jobs across Canadian service markets."
         compact
+        media={getPageMedia("joinUs")}
       />
       <section className="section-space">
         <div className="container-shell grid gap-8 lg:grid-cols-[0.95fr_1.05fr]">

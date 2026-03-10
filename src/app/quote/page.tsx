@@ -1,5 +1,6 @@
 import { QuoteForm } from "@/components/forms/quote-form";
 import { Hero } from "@/components/sections/hero";
+import { getPageMedia } from "@/data/media";
 import { SectionHeading } from "@/components/shared/section-heading";
 import { buildMetadata } from "@/lib/seo";
 
@@ -17,6 +18,7 @@ export default function QuotePage() {
         title="Get a tailored quote for larger, urgent, or specialty cleaning jobs."
         description="Share the property details, timing, and target outcome. Our team reviews the scope and follows up with the right service plan."
         compact
+        media={getPageMedia("quote")}
       />
       <section className="section-space">
         <div className="container-shell grid gap-8 lg:grid-cols-[0.95fr_1.05fr]">

@@ -1,5 +1,7 @@
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Check, MapPin } from "lucide-react";
+import { getBlogMedia, getLocationCardMedia, getServiceMedia } from "@/data/media";
 import { formatCurrency } from "@/lib/utils";
 
 type BaseCardProps = {
@@ -9,18 +11,24 @@ type BaseCardProps = {
 };
 
 export function ServiceCard({ title, description, href }: BaseCardProps) {
+  const slug = href.split("/").filter(Boolean).pop() ?? "";
+  const media = getServiceMedia(slug);
+
   return (
     <Link
       href={href}
-      className="card-surface group flex h-full flex-col justify-between p-6 hover:-translate-y-1"
+      className="card-surface group flex h-full flex-col overflow-hidden hover:-translate-y-1"
     >
-      <div>
+      <div className="relative h-52">
+        <Image src={media.src} alt={media.alt} fill className="object-cover transition duration-500 group-hover:scale-105" sizes="(max-width: 768px) 100vw, 33vw" />
+      </div>
+      <div className="flex h-full flex-col justify-between p-6">
         <h3 className="text-xl font-semibold text-ink">{title}</h3>
         <p className="mt-3 text-sm leading-6 text-slate">{description}</p>
+        <span className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-teal">
+          Explore service <ArrowRight className="h-4 w-4 transition group-hover:translate-x-1" />
+        </span>
       </div>
-      <span className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-teal">
-        Explore service <ArrowRight className="h-4 w-4 transition group-hover:translate-x-1" />
-      </span>
     </Link>
   );
 }
@@ -66,15 +74,22 @@ type LocationCardProps = {
 };
 
 export function LocationCard({ title, description, href }: LocationCardProps) {
+  const media = getLocationCardMedia();
+
   return (
-    <Link href={href} className="card-surface block p-6 hover:border-teal/40">
-      <div className="flex items-center gap-3">
+    <Link href={href} className="card-surface block overflow-hidden hover:border-teal/40">
+      <div className="relative h-44">
+        <Image src={media.src} alt={media.alt} fill className="object-cover" sizes="(max-width: 768px) 100vw, 33vw" />
+      </div>
+      <div className="p-6">
+        <div className="flex items-center gap-3">
         <span className="rounded-full bg-teal/10 p-2 text-teal">
           <MapPin className="h-4 w-4" />
         </span>
         <h3 className="text-lg font-semibold text-ink">{title}</h3>
+        </div>
+        <p className="mt-3 text-sm leading-6 text-slate">{description}</p>
       </div>
-      <p className="mt-3 text-sm leading-6 text-slate">{description}</p>
     </Link>
   );
 }
@@ -87,9 +102,14 @@ type BlogCardProps = {
 };
 
 export function BlogCard({ title, description, href, meta }: BlogCardProps) {
+  const slug = href.split("/").filter(Boolean).pop() ?? "";
+  const media = getBlogMedia(slug);
+
   return (
     <Link href={href} className="card-surface block overflow-hidden">
-      <div className="h-44 bg-gradient-to-br from-teal/15 via-mist to-mint/20" />
+      <div className="relative h-52">
+        <Image src={media.src} alt={media.alt} fill className="object-cover" sizes="(max-width: 768px) 100vw, 33vw" />
+      </div>
       <div className="p-6">
         <p className="text-xs font-semibold uppercase tracking-[0.2em] text-teal">{meta}</p>
         <h3 className="mt-3 text-xl font-semibold text-ink">{title}</h3>

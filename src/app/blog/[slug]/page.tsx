@@ -1,8 +1,10 @@
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import { Hero } from "@/components/sections/hero";
 import { Breadcrumbs } from "@/components/shared/breadcrumbs";
 import { BlogCard } from "@/components/shared/cards";
 import { blogPosts } from "@/data/blog";
+import { getBlogMedia } from "@/data/media";
 import { buildMetadata, siteUrl } from "@/lib/seo";
 import { JsonLd, getBreadcrumbSchema } from "@/lib/schemas";
 
@@ -37,6 +39,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
   }
 
   const related = blogPosts.filter((item) => item.slug !== post.slug).slice(0, 3);
+  const media = getBlogMedia(post.slug);
 
   return (
     <>
@@ -51,14 +54,16 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
         <div className="container-shell">
           <Breadcrumbs items={[{ href: "/", label: "Home" }, { href: "/blog", label: "Blog" }, { label: post.title }]} />
         </div>
-        <Hero eyebrow={post.category} title={post.title} description={post.description} compact />
+        <Hero eyebrow={post.category} title={post.title} description={post.description} compact media={{ ...media, eyebrow: post.category, title: post.imageLabel, description: post.description }} />
       </div>
       <article className="section-space">
         <div className="container-shell max-w-4xl">
           <p className="text-sm font-semibold uppercase tracking-[0.2em] text-teal">
             {post.date} • {post.readTime}
           </p>
-          <div className="mt-8 h-72 rounded-4xl bg-gradient-to-br from-teal/15 via-mist to-mint/20" />
+          <div className="relative mt-8 h-72 overflow-hidden rounded-4xl">
+            <Image src={media.src} alt={media.alt} fill className="object-cover" sizes="(max-width: 1024px) 100vw, 896px" />
+          </div>
           <div className="mt-10 space-y-10">
             {post.sections.map((section) => (
               <section key={section.heading}>

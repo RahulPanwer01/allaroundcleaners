@@ -1,4 +1,5 @@
 import { companyContact } from "@/data/site";
+import { getPageMedia } from "@/data/media";
 import { Hero } from "@/components/sections/hero";
 import { buildMetadata } from "@/lib/seo";
 
@@ -11,7 +12,7 @@ export const metadata = buildMetadata({
 export default function PrivacyPage() {
   return (
     <>
-      <Hero eyebrow="Legal" title="Privacy Policy" description="This policy explains how All Around Cleaners handles website form submissions and inquiry information." compact />
+      <Hero eyebrow="Legal" title="Privacy Policy" description="This policy explains how All Around Cleaners handles website form submissions and inquiry information." compact media={getPageMedia("privacy")} />
       <section className="section-space">
         <div className="container-shell max-w-4xl space-y-6 text-base leading-8 text-slate">
           <p>We collect the information you submit through booking, quote, contact, and recruiting forms to respond to your request, schedule service, and provide support. This may include property details, contact information, and service preferences.</p>

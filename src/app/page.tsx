@@ -9,6 +9,7 @@ import { ProcessSteps } from "@/components/shared/process-steps";
 import { StatsSection } from "@/components/shared/stats-section";
 import { CtaBanner } from "@/components/shared/cta-banner";
 import { blogPosts } from "@/data/blog";
+import { getPageMedia } from "@/data/media";
 import { cities } from "@/data/locations";
 import { pricingTiers } from "@/data/pricing";
 import { services } from "@/data/services";
@@ -28,6 +29,7 @@ export default function HomePage() {
         title="Reliable, fully equipped cleaning teams for homes, rentals, offices, and move-out jobs."
         description="All Around Cleaners helps homeowners, renters, landlords, realtors, and businesses keep properties presentation-ready with transparent pricing, fast scheduling, and detail-led cleaning standards."
         bullets={trustPoints}
+        media={getPageMedia("home")}
       />
       <TrustStrip />
       <section className="section-space">

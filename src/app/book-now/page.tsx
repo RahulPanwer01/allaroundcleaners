@@ -1,5 +1,6 @@
 import { BookingForm } from "@/components/forms/booking-form";
 import { Hero } from "@/components/sections/hero";
+import { getPageMedia } from "@/data/media";
 import { FaqAccordion } from "@/components/shared/faq-accordion";
 import { SectionHeading } from "@/components/shared/section-heading";
 import { buildMetadata } from "@/lib/seo";
@@ -18,6 +19,7 @@ export default function BookNowPage() {
         title="Reserve your cleaning request online in a few minutes."
         description="Choose your service, enter property details, and submit your preferred schedule. We confirm the scope before your appointment."
         compact
+        media={getPageMedia("bookNow")}
       />
       <section className="section-space">
         <div className="container-shell">

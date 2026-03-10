@@ -11,7 +11,7 @@ html {
 }
 
 body {
-  @apply bg-white text-ink antialiased;
+  @apply bg-sand text-ink antialiased;
 }
 
 a {
@@ -31,5 +31,5 @@ a {
 }
 
 .eyebrow {
-  @apply inline-flex rounded-full border border-teal/20 bg-teal/5 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-teal;
+  @apply inline-flex rounded-full border border-teal/20 bg-teal/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-teal;
 }

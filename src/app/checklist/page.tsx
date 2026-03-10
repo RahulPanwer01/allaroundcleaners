@@ -1,6 +1,7 @@
 import { Hero } from "@/components/sections/hero";
 import { ButtonLink } from "@/components/shared/button-link";
 import { SectionHeading } from "@/components/shared/section-heading";
+import { getPageMedia } from "@/data/media";
 import { buildMetadata } from "@/lib/seo";
 
 const checklistSections: Array<{ title: string; items: string[] }> = [
@@ -28,6 +29,7 @@ export default function ChecklistPage() {
         title="A room-by-room checklist that shows what professional cleaning should actually cover."
         description="Use this page to understand typical tasks, compare service scope, and decide which add-ons make sense for your property."
         compact
+        media={getPageMedia("checklist")}
       />
       <section className="section-space">
         <div className="container-shell">

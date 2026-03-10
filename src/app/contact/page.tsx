@@ -2,6 +2,7 @@ import Link from "next/link";
 import { ContactForm } from "@/components/forms/contact-form";
 import { Hero } from "@/components/sections/hero";
 import { ButtonLink } from "@/components/shared/button-link";
+import { getPageMedia } from "@/data/media";
 import { companyContact } from "@/data/site";
 import { buildMetadata } from "@/lib/seo";
 
@@ -19,6 +20,7 @@ export default function ContactPage() {
         title="Reach the team that handles quotes, bookings, and service questions."
         description="Use the form for general inquiries, coverage requests, and support. For custom projects, the quote form is the fastest path."
         compact
+        media={getPageMedia("contact")}
       />
       <section className="section-space">
         <div className="container-shell grid gap-8 lg:grid-cols-[1.05fr_0.95fr]">

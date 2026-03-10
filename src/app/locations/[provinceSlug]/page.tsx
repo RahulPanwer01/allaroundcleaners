@@ -5,6 +5,7 @@ import { Breadcrumbs } from "@/components/shared/breadcrumbs";
 import { FaqAccordion } from "@/components/shared/faq-accordion";
 import { LocationCard, ServiceCard } from "@/components/shared/cards";
 import { SectionHeading } from "@/components/shared/section-heading";
+import { getLocationMedia } from "@/data/media";
 import { cities, getProvinceBySlug, provinces } from "@/data/locations";
 import { services } from "@/data/services";
 import { buildMetadata, siteUrl } from "@/lib/seo";
@@ -64,7 +65,7 @@ export default async function ProvincePage({
         <div className="container-shell">
           <Breadcrumbs items={[{ href: "/", label: "Home" }, { href: "/coverage", label: "Coverage" }, { label: province.name }]} />
         </div>
-        <Hero eyebrow="Province Coverage" title={`${province.name} cleaning services`} description={province.intro} compact />
+        <Hero eyebrow="Province Coverage" title={`${province.name} cleaning services`} description={province.intro} compact media={getLocationMedia("province")} />
       </div>
       <section className="section-space">
         <div className="container-shell grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">

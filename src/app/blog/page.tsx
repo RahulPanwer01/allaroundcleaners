@@ -1,6 +1,7 @@
 import { BlogCard } from "@/components/shared/cards";
 import { Hero } from "@/components/sections/hero";
 import { blogPosts } from "@/data/blog";
+import { getPageMedia } from "@/data/media";
 import { buildMetadata } from "@/lib/seo";
 
 export const metadata = buildMetadata({
@@ -17,6 +18,7 @@ export default function BlogIndexPage() {
         title="Practical cleaning advice that helps clients plan smarter."
         description="Browse original articles covering move-out pricing, deep cleaning, renovation cleanup, pre-sale prep, and more."
         compact
+        media={getPageMedia("blog")}
       />
       <section className="section-space">
         <div className="container-shell grid gap-6 lg:grid-cols-3">

@@ -1,3 +1,4 @@
+import { getPageMedia } from "@/data/media";
 import { Hero } from "@/components/sections/hero";
 import { buildMetadata } from "@/lib/seo";
 
@@ -10,7 +11,7 @@ export const metadata = buildMetadata({
 export default function TermsPage() {
   return (
     <>
-      <Hero eyebrow="Legal" title="Terms of Service" description="These terms govern website use, quote requests, online bookings, and service coordination with All Around Cleaners." compact />
+      <Hero eyebrow="Legal" title="Terms of Service" description="These terms govern website use, quote requests, online bookings, and service coordination with All Around Cleaners." compact media={getPageMedia("terms")} />
       <section className="section-space">
         <div className="container-shell max-w-4xl space-y-6 text-base leading-8 text-slate">
           <p>All Around Cleaners provides cleaning information, quote intake, and online booking request tools through this website. Submitting a form does not guarantee service until scope, timing, access, and availability are confirmed.</p>
