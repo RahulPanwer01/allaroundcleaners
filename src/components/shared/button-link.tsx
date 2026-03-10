@@ -9,8 +9,14 @@ const variants = {
     "border border-mist bg-white text-ink hover:border-teal hover:text-teal focus-visible:outline-teal",
   accent:
     "bg-mint text-white hover:bg-teal focus-visible:outline-mint",
+  inversePrimary:
+    "bg-white text-ink hover:bg-sand focus-visible:outline-white",
+  inverseSecondary:
+    "border border-white/30 bg-transparent text-white hover:bg-white/10 hover:text-white focus-visible:outline-white",
   ghost:
     "text-ink hover:bg-teal/5 hover:text-teal focus-visible:outline-teal",
+  inverseGhost:
+    "text-white hover:bg-white/10 hover:text-white focus-visible:outline-white",
 };
 
 type Variant = keyof typeof variants;

@@ -18,10 +18,10 @@ export function Footer() {
               <p className="mt-4 text-sm font-semibold">Fastest way to reach us</p>
               <p className="mt-2 text-sm text-white/75">{companyContact.responseTime}</p>
               <div className="mt-4 flex flex-wrap gap-3">
-                <ButtonLink href={companyContact.primaryCta.href} className="bg-white text-ink hover:bg-mint hover:text-white">
+                <ButtonLink href={companyContact.primaryCta.href} variant="inversePrimary">
                   {companyContact.primaryCta.label}
                 </ButtonLink>
-                <ButtonLink href={companyContact.secondaryCta.href} variant="ghost" className="border border-white/15 text-white hover:bg-white/10 hover:text-white">
+                <ButtonLink href={companyContact.secondaryCta.href} variant="inverseSecondary">
                   {companyContact.secondaryCta.label}
                 </ButtonLink>
               </div>

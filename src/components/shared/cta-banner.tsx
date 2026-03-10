@@ -16,13 +16,13 @@ export function CtaBanner({ title, description }: CtaBannerProps) {
             <p className="mt-4 text-base text-white/85 sm:text-lg">{description}</p>
           </div>
           <div className="mt-8 flex flex-wrap gap-4">
-            <ButtonLink href="/quote" className="bg-white text-ink hover:bg-sand">
+            <ButtonLink href="/quote" variant="inversePrimary">
               Get a Free Quote
             </ButtonLink>
-            <ButtonLink href="/book-now" variant="secondary" className="border-white/30 bg-transparent text-white hover:bg-white/10 hover:text-white">
+            <ButtonLink href="/book-now" variant="inverseSecondary">
               Book Online
             </ButtonLink>
-            <ButtonLink href="tel:+18005550119" variant="ghost" className="text-white hover:bg-white/10 hover:text-white">
+            <ButtonLink href="tel:+18005550119" variant="inverseGhost">
               Call Now
             </ButtonLink>
           </div>
