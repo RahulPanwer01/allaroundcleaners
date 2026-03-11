@@ -142,24 +142,24 @@ export default function HomePage() {
             </ul>
           </div>
           <div className="card-surface overflow-hidden">
-            <div className="flex h-full flex-col justify-between bg-gradient-to-br from-ink via-teal to-mint p-8 text-white">
+            <div className="flex h-full flex-col justify-between bg-gradient-to-br from-[#f8efe6] via-[#f3e5d7] to-[#ebd5c2] p-8 text-ink">
               <div>
-                <p className="text-sm uppercase tracking-[0.2em] text-white/70">Client-ready standards</p>
+                <p className="text-sm uppercase tracking-[0.2em] text-teal/80">Client-ready standards</p>
                 <h2 className="mt-4 font-serif text-3xl font-semibold">The handover checklist clients expect before they call a job complete.</h2>
-                <p className="mt-4 text-sm leading-7 text-white/80">
+                <p className="mt-4 text-sm leading-7 text-slate">
                   Every service is reviewed against access notes, scope details, kitchen and bath standards, floor finishing, and a final presentation check.
                 </p>
               </div>
-              <div className="mt-8 grid gap-3 text-sm text-white/90 sm:grid-cols-2">
+              <div className="mt-8 grid gap-3 text-sm text-ink sm:grid-cols-2">
                 {[
                   "Arrival and access confirmed",
                   "Bathrooms sanitized and reset",
                   "Kitchen fronts and surfaces detailed",
                   "Floors finished and final walkthrough completed",
                 ].map((item) => (
-                  <div key={item} className="rounded-2xl border border-white/15 bg-white/10 px-4 py-3">
+                  <div key={item} className="rounded-2xl border border-[#d9c2ad] bg-white/70 px-4 py-3">
                     <div className="flex items-center gap-3">
-                      <PlayCircle className="h-4 w-4" />
+                      <PlayCircle className="h-4 w-4 text-teal" />
                       <span>{item}</span>
                     </div>
                   </div>

@@ -47,13 +47,13 @@ export function Hero({ eyebrow, title, description, bullets = [], compact = fals
             <div className="card-surface overflow-hidden">
               <div className="relative h-[340px] sm:h-[460px]">
                 <Image src={media.src} alt={media.alt} fill className="object-cover" sizes="(max-width: 1024px) 100vw, 42vw" />
-                <div className="absolute inset-0 bg-gradient-to-t from-ink/75 via-ink/20 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-ink/80 via-ink/35 to-ink/10" />
                 <div className="absolute left-5 right-5 top-5">
-                  <span className="inline-flex rounded-full border border-white/30 bg-white/12 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-white">
+                  <span className="inline-flex rounded-full border border-sand/60 bg-sand/90 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-ink shadow-sm">
                     {media.eyebrow}
                   </span>
                 </div>
-                <div className="absolute bottom-5 left-5 right-5 rounded-[1.75rem] bg-white/92 p-5 backdrop-blur">
+                <div className="absolute bottom-5 left-5 right-5 rounded-[1.75rem] border border-sand/70 bg-sand/95 p-5 shadow-soft">
                   <h2 className="text-xl font-semibold text-ink sm:text-2xl">{media.title}</h2>
                   <p className="mt-3 text-sm leading-6 text-slate">{media.description}</p>
                 </div>
